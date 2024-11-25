@@ -367,6 +367,7 @@ const HomeScreen: React.FunctionComponent = () => {
                             <input
                               value={product?.discount?.discountAmount}
                               type='number'
+                              min="0"
                               className='w-16'
                               onChange={(e) =>
                                 handleProductDiscount(
@@ -472,6 +473,7 @@ const HomeScreen: React.FunctionComponent = () => {
                                             variant.discount?.discountAmount
                                           }
                                           type='number'
+                                          min="0"
                                           className='w-16 rounded-[30px]'
                                           onChange={(e) =>
                                             handleVariantDiscountAmountChange(
