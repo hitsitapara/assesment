@@ -1,12 +1,17 @@
-const { createProxyMiddleware } = require("http-proxy-middleware");
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
+// Exporting a function that sets up the proxy middleware
 module.exports = function (app) {
+  // Configure the app to use the proxy middleware for requests starting with /api
   app.use(
-    "/api",
+    '/api',
     createProxyMiddleware({
-      target: "http://stageapi.monkcommerce.app",
+      // Set the target server for the proxy
+      target: 'http://stageapi.monkcommerce.app',
+      // Allow changing the origin of the host header to the target URL
       changeOrigin: true,
-      pathRewrite: { "^/api": "" }, // Rewrite /api to nothing in the actual call
-    })
+      // Rewrite the URL path - remove /api prefix before forwarding to target
+      pathRewrite: { '^/api': '' },
+    }),
   );
 };

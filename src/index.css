@@ -1,7 +1,16 @@
+/* 
+  Using Tailwind CSS to generate classes based on the config file 
+  Reference: https://tailwindcss.com/docs/configuration
+*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/*
+  Overriding Ant Design CSS style to match Monk's design
+  Reference: https://ant.design/components/modal/#components-modal-demo-nested-modal
+  Reference: https://ant.design/components/select/#components-select-demo-search
+*/
 .product-modal .ant-modal-content {
   padding-top: 12px;
   padding-left: 0px;
